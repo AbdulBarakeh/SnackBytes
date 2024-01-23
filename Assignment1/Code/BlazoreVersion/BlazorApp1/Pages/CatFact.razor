@@ -1,0 +1,36 @@
+﻿@using System.Text.Json
+@inject HttpClient client
+@page "/catfact"
+
+<PageTitle>Cat Facts</PageTitle>
+
+<h1>Facts</h1>
+
+<p role="status">Current Fact:</p>
+<h2>
+    @currentFact
+</h2>
+
+<button class="btn btn-primary" @onclick="NewFact">Click me for new fact</button>
+
+@code {
+    private string currentFact = "";
+
+    private async void NewFact()
+    {
+
+        using (HttpClient externalClient = new HttpClient())
+        {
+            var response = await externalClient.GetStringAsync("https://catfact.ninja/fact");
+            var content = JsonSerializer.Deserialize<CatFactModel>(response);
+            var fact = content.fact;
+            currentFact = fact;
+        }
+        StateHasChanged();
+    }
+    private class CatFactModel
+    {
+        public string fact { get; set; }
+        public int length { get; set; }
+    }
+}

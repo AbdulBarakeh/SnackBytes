@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment2", "Assignment2", "{3D8CA30D-0970-4A6C-A31F-DE38586CF2CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code", "code", "{F268C138-723C-4A05-8877-3FA309518494}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment2", "Assignment2\code\Assignment2\Assignment2.csproj", "{783627E6-F327-4229-8745-0CF1A1ADCBFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{783627E6-F327-4229-8745-0CF1A1ADCBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783627E6-F327-4229-8745-0CF1A1ADCBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783627E6-F327-4229-8745-0CF1A1ADCBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783627E6-F327-4229-8745-0CF1A1ADCBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F268C138-723C-4A05-8877-3FA309518494} = {3D8CA30D-0970-4A6C-A31F-DE38586CF2CF}
+		{783627E6-F327-4229-8745-0CF1A1ADCBFF} = {F268C138-723C-4A05-8877-3FA309518494}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C3FFEB9-CC26-4C2B-B40F-FBD13B1CFAEC}
+	EndGlobalSection
+EndGlobal

@@ -1,4 +1,6 @@
 using System.IO;
+using SchedulingApp.Shared.Models;
+namespace SchedulingApp.Shared.Services;
 public class SchedulingService
 {
     public static List<SchedulingInfo> MapCSV(string inputPath)

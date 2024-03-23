@@ -1,5 +1,5 @@
 using SchedulingApp.Client.Pages;
-using SchedulingApp.Components;
+using SchedulingApp.Server.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

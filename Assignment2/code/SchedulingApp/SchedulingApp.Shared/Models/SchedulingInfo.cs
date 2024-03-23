@@ -1,3 +1,4 @@
+namespace SchedulingApp.Shared.Models;
 public class SchedulingInfo
 {
     public string TeacherInitials {get; set;}

@@ -1,7 +1,39 @@
 ﻿@page "/"
-
+@using SchedulingApp.Shared.Models
+@using SchedulingApp.Shared.Services
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Teacher Initials</th>
+      <th scope="col">Class</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Date</th>
+      <th scope="col">Classroom</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var item in @input){
+      <tr>
+        <td>@item.TeacherInitials</td>
+        <td>@item.Classname</td>
+        <td>@item.Subject</td>
+        <td>@item.Date</td>
+        <td>@item.Classroom</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@code{
+  private List<SchedulingInfo> input = [];
+
+  protected override void OnInitialized(){
+    input = SchedulingService.MapCSV("C:\\Users\\abdul\\Documents\\Coding\\SnackBytes\\Assignment2\\code\\SchedulingApp\\SchedulingApp.Shared\\Data\\input.csv");
+  }
+  
+}

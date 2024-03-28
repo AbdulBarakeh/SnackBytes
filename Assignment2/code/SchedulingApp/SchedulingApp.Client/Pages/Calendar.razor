@@ -1,0 +1,43 @@
+﻿@page "/calendar"
+<PageTitle>Calendar</PageTitle>
+
+<div class="btn-group custom-calendar-buttons">
+    <button class="btn btn-primary" @onclick="() => PreviousStep()"> Previous Days </button>
+    <button class="btn btn-primary" @onclick="() => NextStep()"> Next Days</button>
+</div>
+<div>
+    <div class="custom-calendar">
+        <h2>@currentDate.ToString("MMMM yyyy")</h2>
+        <SchedulingApp.Client.Components.CalendarDays Skip=@skipRes Top=@top CurrentDate=@currentDate />
+
+    </div>
+</div>
+<style>
+    .custom-calendar {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .custom-calendar-buttons {
+        width: 220px;
+    }
+</style>
+@code {
+    private DateTime currentDate = DateTime.Now;
+    private int pageNum = 1;
+    private int skip = 5;
+    private int skipRes = 0;
+    private int top = 5;
+
+    private void NextStep()
+    {
+        this.pageNum++;
+        skipRes = skip * this.pageNum;
+    }
+    private void PreviousStep()
+    {
+        this.pageNum--;
+        skipRes = skip * this.pageNum;
+    }
+
+}

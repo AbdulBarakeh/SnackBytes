@@ -1,0 +1,87 @@
+﻿@using SchedulingApp.Server.Components
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
+@rendermode InteractiveServer
+@page "/calendar"
+<PageTitle>Calendar</PageTitle>
+
+<div class="btn-group custom-calendar-buttons">
+    <button class="btn btn-primary" @onclick="() => PreviousStep()"> Previous Days </button>
+    <button class="btn btn-primary" @onclick="() => NextStep()"> Next Days</button>
+</div>
+<div>
+    <div class="custom-calendar">
+        <CalendarDays Skip=@skipRes Top=@top CurrentDate=@currentDate />
+
+    </div>
+</div>
+<style>
+    .custom-calendar {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .custom-calendar-buttons {
+        width: 220px;
+    }
+</style>
+@code {
+    private DateTime currentDate = DateTime.Now;
+    private int pageNum = 0;
+    private int skip = 5;
+    private int skipRes = 0;
+    private int top = 5;
+    private HubConnection? hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/calendarhub"))
+            .Build();
+
+        hubConnection.On("NextStep", () =>
+        {
+            this.pageNum++;
+            skipRes = skip * this.pageNum;
+            InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On("PreviousStep", () =>
+        {
+            // if (this.pageNum > 0)
+            // {
+                this.pageNum--;
+                skipRes = skip * this.pageNum;
+            // }
+            InvokeAsync(StateHasChanged);
+        });
+
+        await hubConnection.StartAsync();
+
+    }
+    private async Task NextStep()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("DoNextStep");
+        }
+    }
+    private async Task PreviousStep()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("DoPreviousStep");
+        }
+    }
+    public bool IsConnected =>
+       hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}

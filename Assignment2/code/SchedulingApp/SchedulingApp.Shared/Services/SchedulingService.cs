@@ -1,9 +1,12 @@
 using System.IO;
+using AutoInterfaceAttributes;
 using SchedulingApp.Shared.Models;
 namespace SchedulingApp.Shared.Services;
-public class SchedulingService
+[AutoInterface]
+public class SchedulingService : ISchedulingService
 {
-    public static List<SchedulingInfo> MapCSV(string inputPath)
+    public List<SchedulingInfo> Schedulings { get; set; } = new List<SchedulingInfo>();
+    public void MapCSV(string inputPath)
     {
         var lines = File.ReadAllLines(inputPath);
         DateTime parsedDate;
@@ -17,6 +20,6 @@ public class SchedulingService
             ,Classroom = data[4].ToString()
             };
         });
-        return mappedData.ToList();
+        Schedulings = mappedData.ToList();
     }
 }

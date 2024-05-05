@@ -5,7 +5,7 @@
 
         <span class="text-center"><strong>@Date.ToString("yyyy")</strong> <strong>@Date.ToString("MMMM")</strong> <strong>@Date.ToString("dd")/@Date.ToString("dddd")</strong></span>
         <div class="d-flex p-3 flex-column">
-            @foreach (var infoItem in schedulingItems)
+            @foreach (var infoItem in Items)
             {
                 <SchedulingItem Info="infoItem" />
             }
@@ -25,13 +25,14 @@
     [Parameter]
     public required DateTime Date { get; set; }
 
-    private List<SchedulingInfo> schedulingItems { get; set; } = new();
+    private List<SchedulingInfo> Items;
+
+    [Inject]
+    ISchedulingService schedulingService { get; set; } 
 
     protected override void OnParametersSet()
     {
         DateOnly fruit = new DateOnly(Date.Year,Date.Month,Date.Day);
-        schedulingItems = Shared.Services.SchedulingService
-        .MapCSV("wwwroot\\Data\\input.csv")
-        .Where(x => new DateOnly(x.Date.Year,x.Date.Month, x.Date.Day).Equals(fruit)).ToList() ?? new();
+        Items = schedulingService.Schedulings.Where(x => new DateOnly(x.Date.Year,x.Date.Month, x.Date.Day).Equals(fruit)).ToList() ?? new();
     }
 }

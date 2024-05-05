@@ -1,7 +1,8 @@
-﻿@using SchedulingApp.Client.Components
-@page "/calendar"
-<PageTitle>Calendar</PageTitle>
+﻿@page "/calendar"
+@rendermode InteractiveServer
 
+@using SchedulingAppV2.Client.Components
+<PageTitle>Calendar</PageTitle>
 <div class="btn-group custom-calendar-buttons">
     <button class="btn btn-primary" @onclick="() => PreviousStep()"> Previous Days </button>
     <button class="btn btn-primary" @onclick="() => NextStep()"> Next Days</button>

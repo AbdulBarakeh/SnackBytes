@@ -1,0 +1,45 @@
+<div class="custom-calendar-days d-inline-flex flex-row flex-nowrap p-3">
+    @foreach (var date in allDates)
+    {
+        <CalendarItem Date=@date />
+    }
+</div>
+<style>
+    .custom-calendar-days {
+        background-color: #abc5c7;
+        border-color: black !important;
+        border-width: 1px;
+        border-style: solid;
+
+    }
+</style>
+@code {
+    [Parameter]
+    public required DateTime CurrentDate { get; set; }
+
+    [Parameter]
+    public required int Skip { get; set; }
+
+    [Parameter]
+    public required int Top { get; set; }
+
+    private List<DateTime> allDates = new();
+    protected override void OnParametersSet()
+    {
+        allDates = GetDatesOfCurrentMonth(CurrentDate, Skip, Top);
+    }
+
+     private List<DateTime> GetDatesOfCurrentMonth(DateTime currentDate, int skip, int top)
+    {
+        List<DateTime> dates = new();
+
+            var currentPageDate = currentDate.AddDays(skip);
+
+            for (int i = 1; i <= top; i++)
+            {
+                dates.Add(currentPageDate.AddDays(i));
+            }
+
+        return dates.Take(top).ToList();
+    }
+}

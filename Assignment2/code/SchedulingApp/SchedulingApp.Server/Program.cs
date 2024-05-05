@@ -1,4 +1,4 @@
-using SchedulingApp.Client;
+using SchedulingApp.Server;
 using SchedulingApp.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,9 +26,12 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
-    .AddInteractiveWebAssemblyRenderMode();
+    .AddInteractiveWebAssemblyRenderMode()
+    .AddAdditionalAssemblies(typeof(SchedulingApp.Client._Imports).Assembly);
+
 var schedulingService = app.Services.GetRequiredService<ISchedulingService>();
 schedulingService.MapCSV("wwwroot\\Data\\input.csv");
 app.Run();

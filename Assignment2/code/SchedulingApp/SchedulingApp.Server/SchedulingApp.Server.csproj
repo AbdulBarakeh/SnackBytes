@@ -9,7 +9,13 @@
   <ItemGroup>
     <ProjectReference Include="..\SchedulingApp.Client\SchedulingApp.Client.csproj" />
     <ProjectReference Include="..\SchedulingApp.Shared\SchedulingApp.Shared.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

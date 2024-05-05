@@ -1,9 +1,12 @@
 ﻿@page "/draglist"
 @using SchedulingApp.Shared.Services
-@using SchedulingApp.Client.Components
+@using SchedulingAppV2.Client.Components
+@rendermode InteractiveServer
+
 @inject ISchedulingService service
+
 <h3>DragList</h3>
-@* <SortableList Id="listo" Items="@service.Schedulings" OnUpdate="Update" Context="scheduleInfo">
+<SortableList Id="listo" Items="@service.Schedulings" OnUpdate="Update" Context="scheduleInfo">
     <SortableItemTemplate>
         <div class="card has-border-light has-background-blazor has-text-white has-cursor-grab">
             <p class="is-size-4 p-2 ml-4">@scheduleInfo.Subject</p>
@@ -38,4 +41,3 @@
         StateHasChanged();
     }
 }
- *@

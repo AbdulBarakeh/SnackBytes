@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "SchedulingApp.Client": {
-      "commandName": "Project",
-      "applicationUrl": ""
-    }
-  }
-}

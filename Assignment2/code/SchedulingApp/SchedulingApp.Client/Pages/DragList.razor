@@ -1,0 +1,40 @@
+﻿@page "/draglist"
+@using SchedulingApp.Shared.Services
+@using SchedulingApp.Client.Components
+@inject ISchedulingService service
+<h3>DragList</h3>
+<SortableList Items="@service.Schedulings" OnUpdate="Update" Context="scheduleInfo">
+    <SortableItemTemplate>
+        <div class="card has-border-light has-background-blazor has-text-white has-cursor-grab">
+            <p class="is-size-4 p-2 ml-4">@scheduleInfo</p>
+        </div>
+    </SortableItemTemplate>
+</SortableList>
+
+@code {
+
+    private void Update((int oldIndex, int newIndex) indices)
+    {
+        // deconstruct the tuple
+        var (oldIndex, newIndex) = indices;
+
+        var items = this.service.Schedulings;
+        var itemToMove = items[oldIndex];
+        items.RemoveAt(oldIndex);
+
+        if (newIndex < items.Count)
+        {
+            {
+                items.Insert(newIndex, itemToMove);
+            }
+        }
+        else
+        {
+            {
+                items.Add(itemToMove);
+            }
+        }
+
+        StateHasChanged();
+    }
+}

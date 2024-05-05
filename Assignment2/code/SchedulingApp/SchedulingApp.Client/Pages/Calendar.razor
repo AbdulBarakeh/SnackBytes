@@ -1,0 +1,43 @@
+﻿@using SchedulingApp.Client.Components
+@rendermode InteractiveServer
+@page "/calendar"
+<PageTitle>Calendar</PageTitle>
+
+<div class="btn-group custom-calendar-buttons">
+    <button class="btn btn-primary" @onclick="() => PreviousStep()"> Previous Days </button>
+    <button class="btn btn-primary" @onclick="() => NextStep()"> Next Days</button>
+</div>
+<div>
+    <div class="custom-calendar">
+        <CalendarDays Skip=@skipRes Top=@top CurrentDate=@currentDate />
+
+    </div>
+</div>
+<style>
+    .custom-calendar {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .custom-calendar-buttons {
+        width: 220px;
+    }
+</style>
+@code {
+    private DateTime currentDate = DateTime.Now;
+    private int pageNum = 0;
+    private int skip = 5;
+    private int skipRes = 0;
+    private int top = 5;
+
+    private async Task NextStep()
+    {
+        this.pageNum++;
+        skipRes = skip * this.pageNum;
+    }
+    private async Task PreviousStep()
+    {
+        this.pageNum--;
+        skipRes = skip * this.pageNum;
+    }
+}

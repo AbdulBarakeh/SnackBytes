@@ -82,7 +82,7 @@
                 item.Date = DateTime.Parse(regex.Match(target).Value);
             }
         }
-        ShouldRender();
+        StateHasChanged();
     }
 
     public void Dispose() => selfReference?.Dispose();

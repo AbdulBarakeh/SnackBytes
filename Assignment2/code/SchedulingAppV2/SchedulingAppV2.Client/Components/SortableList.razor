@@ -1,6 +1,8 @@
 @using System.Collections.Generic
 @using System.Diagnostics.CodeAnalysis
-
+@using SchedulingApp.Shared.Models
+@using System.Text.RegularExpressions
+@using SchedulingApp.Shared.Services
 @inject IJSRuntime JS
 
 @typeparam T
@@ -16,6 +18,8 @@
 </div>
 
 @code {
+    [Inject]
+    public SchedulingApp.Shared.Services.ISchedulingService ScheduleService { get; set; }
 
     [Parameter]
     public RenderFragment<T>? SortableItemTemplate { get; set; }
@@ -24,10 +28,7 @@
     public List<T> Items { get; set; }
 
     [Parameter]
-    public EventCallback<(int oldIndex, int newIndex)> OnUpdate { get; set; }
-
-    [Parameter]
-    public EventCallback<(int oldIndex, int newIndex)> OnRemove { get; set; }
+    public EventCallback<(int oldIndex, int newIndex, string content)> OnRemove { get; set; }
 
     [Parameter]
     public string Id { get; set; } = Guid.NewGuid().ToString();
@@ -62,18 +63,26 @@
         }
     }
 
+
     [JSInvokable]
-    public void OnUpdateJS(int oldIndex, int newIndex)
+    public void OnRemoveJS(int oldIndex, int newIndex, string content)
     {
-        // invoke the OnUpdate event passing in the oldIndex and the newIndex
-        OnUpdate.InvokeAsync((oldIndex, newIndex));
+        // remove the item from the list
+        OnRemove.InvokeAsync((oldIndex, newIndex, content));
     }
 
     [JSInvokable]
-    public void OnRemoveJS(int oldIndex, int newIndex)
+    public void UpdateCustomDotNetList(string target, string source)
     {
-        // remove the item from the list
-        OnRemove.InvokeAsync((oldIndex, newIndex));
+        foreach (SchedulingInfo item in ScheduleService.Schedulings)
+        {
+            if (item.Guid.ToString() == source)
+            {
+                var regex = new Regex("\\d+/\\d+/\\d+");
+                item.Date = DateTime.Parse(regex.Match(target).Value);
+            }
+        }
+        ShouldRender();
     }
 
     public void Dispose() => selfReference?.Dispose();

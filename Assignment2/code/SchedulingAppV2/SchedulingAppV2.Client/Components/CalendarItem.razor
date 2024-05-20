@@ -1,14 +1,17 @@
 @using SchedulingApp.Shared.Models
 @using SchedulingApp.Shared.Services
+@rendermode InteractiveAuto
+
 <div class="custom-calendar-item d-flex p-3">
     <div class="d-flex flex-column">
 
         <span class="text-center"><strong>@Date.ToString("yyyy")</strong> <strong>@Date.ToString("MMMM")</strong> <strong>@Date.ToString("dd")/@Date.ToString("dddd")</strong></span>
         <div class="d-flex p-3 flex-column">
-            @foreach (var infoItem in Items)
-            {
-                <SchedulingItem Info="infoItem" />
-            }
+            <SortableList Group="sharedLists" Items="@Items" OnRemove="ListRemove" Context="scheduleInfo">
+                <SortableItemTemplate>
+                    <SchedulingItem Info="scheduleInfo" />
+                </SortableItemTemplate>
+            </SortableList>
         </div>
     </div>
 </div>
@@ -28,11 +31,54 @@
     private List<SchedulingInfo> Items;
 
     [Inject]
-    ISchedulingService schedulingService { get; set; } 
+    public ISchedulingService SchedulingService { get; set; }
 
     protected override void OnParametersSet()
     {
-        DateOnly fruit = new DateOnly(Date.Year,Date.Month,Date.Day);
-        Items = schedulingService.Schedulings.Where(x => new DateOnly(x.Date.Year,x.Date.Month, x.Date.Day).Equals(fruit)).ToList() ?? new();
+        DateOnly fruit = new DateOnly(Date.Year, Date.Month, Date.Day);
+        Items = SchedulingService.Schedulings.Where(x => new DateOnly(x.Date.Year, x.Date.Month, x.Date.Day).Equals(fruit)).ToList() ?? new();
     }
+    private void Update((int oldIndex, int newIndex) indices)
+    {
+        // deconstruct the tuple
+        var (oldIndex, newIndex) = indices;
+        if (newIndex == Items.Count)
+        {
+            newIndex = newIndex - 1;
+        }
+        if (oldIndex == Items.Count)
+        {
+            oldIndex = oldIndex - 1;
+        }
+        var items = Items;
+        var itemToMove = items[oldIndex];
+        items.RemoveAt(oldIndex);
+
+        if (newIndex < items.Count)
+        {
+            {
+                items.Insert(newIndex, itemToMove);
+            }
+        }
+        else
+        {
+            {
+                items.Add(itemToMove);
+            }
+        }
+        SchedulingService.Schedulings = items;
+        StateHasChanged();
+    }
+    private void ListRemove((int oldIndex, int newIndex, string content) indices)
+    {
+        // get the item at the old index in list 1
+        var item = Items[indices.oldIndex];
+
+        // add it to the new index in list 2
+        Items.Insert(indices.newIndex, item);
+
+        // remove the item from the old index in list 1
+        Items.Remove(item);
+    }
+
 }

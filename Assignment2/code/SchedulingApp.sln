@@ -5,9 +5,9 @@ VisualStudioVersion = 17.10.34818.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingApp.Shared", "SchedulingApp.Shared\SchedulingApp.Shared.csproj", "{33551F69-EAE6-4EB5-8291-41A672B1A7CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingAppV2", "..\SchedulingAppV2\SchedulingAppV2\SchedulingAppV2.csproj", "{D266E34B-6170-4DAD-B0F2-F0F2E4971B82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingApp.Server", "SchedulingApp.Server\SchedulingApp.Server.csproj", "{D266E34B-6170-4DAD-B0F2-F0F2E4971B82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchedulingAppV2.Client", "..\SchedulingAppV2\SchedulingAppV2.Client\SchedulingAppV2.Client.csproj", "{70545A66-F995-4DD6-B3B0-91723175FD45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchedulingApp.Client", "SchedulingApp.Client\SchedulingApp.Client.csproj", "{70545A66-F995-4DD6-B3B0-91723175FD45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

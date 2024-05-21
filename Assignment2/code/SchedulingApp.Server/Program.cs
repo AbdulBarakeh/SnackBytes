@@ -1,7 +1,7 @@
 using SchedulingApp.Shared.Services;
-using SchedulingAppV2.Components;
+using SchedulingApp.Server.Components;
 
-namespace SchedulingAppV2
+namespace SchedulingApp.Server
 {
     public class Program
     {

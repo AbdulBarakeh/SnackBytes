@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SchedulingApp\SchedulingApp.Shared\SchedulingApp.Shared.csproj" />
-    <ProjectReference Include="..\SchedulingAppV2.Client\SchedulingAppV2.Client.csproj" />
 
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchedulingApp.Client\SchedulingApp.Client.csproj" />
+    <ProjectReference Include="..\SchedulingApp.Shared\SchedulingApp.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,8 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SchedulingApp\SchedulingApp.Shared\SchedulingApp.Shared.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchedulingApp.Shared\SchedulingApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

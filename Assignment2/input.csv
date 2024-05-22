@@ -1,110 +1,114 @@
 Teacher Initials,Class,Subject,Date,Classroom
 AB,101,Programming Fundamentals,2024-04-10,Room 203
-CD,102,Database Management,2024-04-10,Room 203
+CD,102,Database Management,2024-04-10,Room 204
 EF,103,Software Engineering,2024-04-11,Room 301
-GH,104,Web Development,2024-04-11,Room 301
+AB,104,Web Development,2024-04-11,Room 302
 IJ,105,Data Structures,2024-04-12,Room 106
-KL,106,Algorithms,2024-04-12,Room 106
+KL,106,Algorithms,2024-04-12,Room 107
 MN,107,Software Testing,2024-04-13,Room 205
-OP,108,Mobile App Development,2024-04-13,Room 205
+OP,108,Mobile App Development,2024-04-13,Room 206
 QR,109,Network Security,2024-04-14,Room 303
-ST,110,Artificial Intelligence,2024-04-14,Room 303
+ST,110,Artificial Intelligence,2024-04-14,Room 304
 UV,111,Operating Systems,2024-04-15,Room 204
-WX,112,Computer Networks,2024-04-15,Room 204
+WX,112,Computer Networks,2024-04-15,Room 205
 YZ,113,Software Project Management,2024-04-16,Room 207
-AB,114,Human-Computer Interaction,2024-04-16,Room 207
+AB,114,Human-Computer Interaction,2024-04-16,Room 208
 CD,115,Computer Graphics,2024-04-17,Room 302
-EF,116,Database Systems,2024-04-17,Room 302
+EF,116,Database Systems,2024-04-17,Room 303
 GH,117,Software Architecture,2024-04-18,Room 108
-IJ,118,Algorithmic Trading,2024-04-18,Room 108
+IJ,118,Algorithmic Trading,2024-04-18,Room 109
 KL,119,Data Mining,2024-04-19,Room 209
-MN,120,Machine Learning,2024-04-19,Room 209
+MN,120,Machine Learning,2024-04-19,Room 210
 OP,121,Information Security,2024-04-20,Room 307
-QR,122,Cloud Computing,2024-04-20,Room 307
+QR,122,Cloud Computing,2024-04-20,Room 308
 ST,123,Embedded Systems,2024-04-21,Room 202
-UV,124,Computer Vision,2024-04-21,Room 202
+UV,124,Computer Vision,2024-04-21,Room 203
 WX,125,Mobile Computing,2024-04-22,Room 106
-YZ,126,Quantum Computing,2024-04-22,Room 106
+YZ,126,Quantum Computing,2024-04-22,Room 107
 AB,127,Software Quality Assurance,2024-04-23,Room 208
-CD,128,Internet of Things,2024-04-23,Room 208
+CD,128,Internet of Things,2024-04-23,Room 209
 EF,129,Software Metrics,2024-04-24,Room 304
-GH,130,Virtual Reality,2024-04-24,Room 304
-IJ,131,Computer Ethics,2024-04-25,Room 109
-KL,132,IT Project Management,2024-04-25,Room 109
-MN,133,Computerized Accounting,2024-04-26,Room 301
-OP,134,Agile Development,2024-04-26,Room 301
-QR,135,Data Analytics,2024-04-27,Room 306
-ST,136,Software Documentation,2024-04-27,Room 306
-UV,137,Network Administration,2024-04-28,Room 203
-WX,138,User Interface Design,2024-04-28,Room 203
-YZ,139,Parallel Computing,2024-04-29,Room 105
-AB,140,Computer Forensics,2024-04-29,Room 105
-CD,141,Geographic Information Systems,2024-05-01,Room 301
-EF,142,Web Security,2024-05-01,Room 301
+GH,130,Virtual Reality,2024-04-24,Room 305
+AB,131,Computer Ethics,2024-04-25,Room 109
+CD,132,IT Project Management,2024-04-25,Room 110
+EF,133,Computerized Accounting,2024-04-26,Room 301
+AB,134,Agile Development,2024-04-26,Room 302
+IJ,135,Data Analytics,2024-04-27,Room 306
+KL,136,Software Documentation,2024-04-27,Room 307
+MN,137,Network Administration,2024-04-28,Room 203
+OP,138,User Interface Design,2024-04-28,Room 204
+QR,139,Parallel Computing,2024-04-29,Room 105
+ST,140,Computer Forensics,2024-04-29,Room 106
+UV,141,Geographic Information Systems,2024-05-01,Room 301
+EF,142,Web Security,2024-05-01,Room 302
 GH,143,Software Deployment,2024-05-02,Room 205
-IJ,144,Game Development,2024-05-02,Room 205
+IJ,144,Game Development,2024-05-02,Room 206
 KL,145,Data Warehousing,2024-05-03,Room 303
-MN,146,Cybersecurity,2024-05-03,Room 303
+MN,146,Cybersecurity,2024-05-03,Room 304
 OP,147,Humanoid Robotics,2024-05-04,Room 204
-QR,148,Software Maintenance,2024-05-04,Room 204
+QR,148,Software Maintenance,2024-05-04,Room 205
 ST,149,IT Governance,2024-05-05,Room 106
-UV,150,Artificial Neural Networks,2024-05-05,Room 106
+UV,150,Artificial Neural Networks,2024-05-05,Room 107
 WX,151,Mobile Security,2024-05-06,Room 205
-YZ,152,Software Licensing,2024-05-06,Room 205
+YZ,152,Software Licensing,2024-05-06,Room 206
+YZ,152,Software Licensing,2024-05-06,Room 206
+YZ,152,Software Licensing,2024-05-06,Room 206
 AB,153,Data Communication,2024-05-07,Room 303
-CD,154,Information Retrieval,2024-05-07,Room 303
-EF,155,Robotic Process Automation,2024-05-08,Room 301
-GH,156,Computer Architecture,2024-05-08,Room 301
+CD,154,Information Retrieval,2024-05-07,Room 304
+IJ,155,Robotic Process Automation,2024-05-08,Room 301
+IJ,156,Computer Architecture,2024-05-08,Room 302
 IJ,157,Software Development Lifecycle,2024-05-09,Room 106
-KL,158,Human-Robot Interaction,2024-05-09,Room 106
+KL,158,Human-Robot Interaction,2024-05-09,Room 107
 MN,159,IT Ethics,2024-05-10,Room 204
-OP,160,Computer Aided Design,2024-05-10,Room 204
+OP,160,Computer Aided Design,2024-05-10,Room 205
 QR,161,Mobile Game Development,2024-05-11,Room 302
-ST,162,Computerized Simulation,2024-05-11,Room 302
+QR,162,Computerized Simulation,2024-05-11,Room 303
 UV,163,Data Privacy,2024-05-12,Room 205
-WX,164,Computer Programming Languages,2024-05-12,Room 205
+WX,164,Computer Programming Languages,2024-05-12,Room 206
 YZ,165,Network Protocols,2024-05-13,Room 303
-AB,166,IT Service Management,2024-05-13,Room 303
+AB,166,IT Service Management,2024-05-13,Room 304
 CD,167,Software Security,2024-05-14,Room 204
-EF,168,Geometric Modeling,2024-05-14,Room 204
+EF,168,Geometric Modeling,2024-05-14,Room 205
 GH,169,Computerized Inventory Management,2024-05-15,Room 301
 IJ,170,Artificial General Intelligence,2024-05-15,Room 301
 KL,171,Agile Testing,2024-05-16,Room 106
-MN,172,Computer Algebra Systems,2024-05-16,Room 106
+MN,172,Computer Algebra Systems,2024-05-16,Room 107
 OP,173,Cloud Security,2024-05-17,Room 205
-QR,174,Computer Networks Security,2024-05-17,Room 205
+QR,174,Computer Networks Security,2024-05-17,Room 206
 ST,175,Software Configuration Management,2024-05-18,Room 303
-UV,176,Computer Vision Systems,2024-05-18,Room 303
+UV,176,Computer Vision Systems,2024-05-18,Room 304
 WX,177,Data Science,2024-05-19,Room 204
-YZ,178,Network Design,2024-05-19,Room 204
+YZ,178,Network Design,2024-05-19,Room 205
 AB,179,Information Systems Audit,2024-05-20,Room 302
-CD,180,Robotics Programming,2024-05-20,Room 302
+CD,180,Robotics Programming,2024-05-20,Room 303
 EF,181,Blockchain Development,2024-05-21,Room 108
-GH,182,Software Performance Testing,2024-05-21,Room 108
+EF,182,Software Performance Testing,2024-05-21,Room 108
 IJ,183,Computer-based Training,2024-05-22,Room 209
-KL,184,Software Project Planning,2024-05-22,Room 209
+KL,184,Software Project Planning,2024-05-22,Room 210
 MN,185,Neural Network Programming,2024-05-23,Room 307
-OP,186,Software Prototype Design,2024-05-23,Room 307
+OP,186,Software Prototype Design,2024-05-23,Room 308
 QR,187,Usability Testing,2024-05-24,Room 202
-ST,188,Data Compression,2024-05-24,Room 202
-UV,189,IT Risk Management,2024-05-25,Room 106
-WX,190,Computational Geometry,2024-05-25,Room 106
+ST,188,Data Compression,2024-05-24,Room 203
+UV,189,IT Risk Management,2024-05-25,Room 107
+WX,190,Computational Geometry,2024-05-25,Room 107
+WX,190,Computational Geometry,2024-05-25,Room 107
+WX,190,Computational Geometry,2024-05-25,Room 107
 YZ,191,Mobile Application Security,2024-05-26,Room 208
-AB,192,Software Usability,2024-05-26,Room 208
-CD,193,Quantum Programming,2024-05-27,Room 301
-EF,194,Software Validation,2024-05-27,Room 301
+AB,192,Software Usability,2024-05-26,Room 209
+CD,193,Quantum Programming,2024-05-27,Room 302
+EF,194,Software Validation,2024-05-27,Room 302
 GH,195,Software Requirements Engineering,2024-05-28,Room 205
-IJ,196,Database Security,2024-05-28,Room 205
-KL,197,Computer Forensics,2024-05-29,Room 303
-MN,198,Humanoid Robotics,2024-05-29,Room 303
+IJ,196,Database Security,2024-05-28,Room 206
+MN,197,Computer Forensics,2024-05-29,Room 303
+MN,198,Humanoid Robotics,2024-05-29,Room 304
 OP,199,Software Reliability,2024-05-30,Room 204
-QR,200,Parallel Processing,2024-05-30,Room 204
-ST,201,Mobile Computing,2024-05-31,Room 302
-UV,202,Computer Graphics,2024-05-31,Room 302
+QR,200,Parallel Processing,2024-05-30,Room 205
+ST,201,Mobile Computing,2024-05-31,Room 305
+UV,202,Computer Graphics,2024-05-31,Room 305
 WX,203,Software Prototyping,2024-06-01,Room 108
-YZ,204,Web Development,2024-06-01,Room 108
+WX,204,Web Development,2024-06-01,Room 109
 AB,205,Information Security Management,2024-06-02,Room 209
-CD,206,Network Management,2024-06-02,Room 209
-EF,207,Computer Vision Algorithms,2024-06-03,Room 307
-GH,208,Software Testing Techniques,2024-06-03,Room 307
-IJ,209,Machine Learning,202
+CD,206,Network Management,2024-06-02,Room 210
+EF,207,Computer Vision Algorithms,2024-06-03,Room 207
+GH,208,Software Testing Techniques,2024-06-03,Room 208
+IJ,209,Machine Learning,2024-06-03,Room 307
